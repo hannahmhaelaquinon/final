@@ -1,0 +1,132 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!-- <link rel="stylesheet" href="static/sampol/css/login.css"> -->
+    <link rel="stylesheet" href="{% static 'sampol/css/login.css' %}">
+
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>SAMPOL</title>
+  </head>
+
+  {% block content %} 
+  <body>
+
+     <!--Container start-->
+    <div class="container2">
+      <input type="checkbox" id="flip">
+
+     <!--SignIn Right Side Design start-->
+      <div class="cover">
+        <div class="front">
+          <img src="{% static 'sampol/images/wildcat.jpg' %}" alt="">
+          <div class="text">
+            <span class="text-1">Today <br> is the opportunity <br> to build the <br>tomorrow <br>you want</span>
+            <span class="text-2">-Ken Poirot</span>
+          </div>
+        </div>
+    <!--SignIn Right Side Design end-->
+
+    <!--SignUp Left Side Design end-->
+        <div class="back">
+          <img class="backImg" src="{% static 'sampol/images/new.png' %}" alt="">
+          <div class="text">
+            <span class="text-1">Complete miles of journey <br> with one step</span>
+            <span class="text-2">Let's get started</span>
+          </div>
+        </div>
+      </div>
+      <!--SignUp Left Side Design end-->
+
+      <div class="forms">
+        <div class="form-content">
+               <!--SignUp Starts-->
+               <div class="signup-form">
+                <div class="title">
+                  Edit User
+                </div>
+    
+                <form action="/UpdateUser/{{ user.id }}" method="POST">
+                    {% csrf_token %}
+          
+                    <div class="input-boxes">
+                      <div class="input-box">
+                        <i class="fas fa-user" style="padding-left: 8px;"></i>
+                        <input type="text" value="{{ user.fname }}" name="fname" required>
+                      </div>
+          
+                      <div class="input-box">
+                        <i class="fas fa-user" style="padding-left: 8px;"></i>
+                        <input type="text" value="{{ user.lname }}" name="lname" required>
+                      </div>
+          
+                      <div class="input-box">
+                        <i class="fas fa-envelope" style="padding-left: 8px;"></i>
+                        <input type="email" value="{{ user.email }}" name="email" required>
+                      </div>
+          
+                      <div class="input-box">
+                        <i class="fas fa-user" style="padding-left: 8px;"></i>
+                        <input type="text" value="{{ user.Uname }}" name="Uname" required>
+                      </div>
+          
+                      <div class="input-box">
+                        <i class="fas fa-lock" style="padding-left: 8px;"></i>
+                        <input type="password" value="{{ user.Pass }}" name="Pass" required>
+                      </div>
+          
+                      <div class="button input-box">
+                        <input type="submit" value="Update">
+                        &nbsp;
+                        <input type="submit" value="Close">
+                      </div>
+                    </div>
+                  </form>
+              </div>
+              <!--Sign Up Ends-->
+
+  </body>
+  {% endblock content %}
+</html>
+
+
+<!-- <form action="/UpdateUser/{{ user.id }}" method="POST">
+          {% csrf_token %}
+
+          <div class="input-boxes">
+            <div class="input-box">
+              <i class="fas fa-user" style="padding-left: 8px;"></i>
+              <input type="text" value="{{ user.fname }}" name="fname" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-user" style="padding-left: 8px;"></i>
+              <input type="text" value="{{ user.lname }}" name="lname" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-envelope" style="padding-left: 8px;"></i>
+              <input type="email" value="{{ user.email }}" name="email" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-user" style="padding-left: 8px;"></i>
+              <input type="text" value="{{ user.Uname }}" name="Uname" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-lock" style="padding-left: 8px;"></i>
+              <input type="password" value="{{ user.Pass }}" name="Pass" required>
+            </div>
+
+            <div class="button input-box">
+              <input type="submit" value="Sumbit">
+            </div>
+          </div>
+        </form> -->

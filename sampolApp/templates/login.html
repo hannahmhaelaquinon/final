@@ -1,0 +1,149 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!-- <link rel="stylesheet" href="static/sampol/css/login.css"> -->
+    <link rel="stylesheet" href="{% static 'sampol/css/login.css' %}">
+
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>SAMPOL</title>
+  </head>
+
+  {% block content %} 
+  <body>
+
+     <!--Container start-->
+    <div class="container2">
+      <input type="checkbox" id="flip">
+
+     <!--SignIn Right Side Design start-->
+      <div class="cover">
+        <div class="front">
+          <img src="{% static 'sampol/images/wildcat.jpg' %}" alt="">
+          <div class="text">
+            <span class="text-1">Today <br> is the opportunity <br> to build the <br>tomorrow <br>you want</span>
+            <span class="text-2">-Ken Poirot</span>
+          </div>
+        </div>
+    <!--SignIn Right Side Design end-->
+
+    <!--SignUp Left Side Design end-->
+        <div class="back">
+          <img class="backImg" src="{% static 'sampol/images/new.png' %}" alt="">
+          <div class="text">
+            <span class="text-1">Complete miles of journey <br> with one step</span>
+            <span class="text-2">Let's get started</span>
+          </div>
+        </div>
+      </div>
+      <!--SignUp Left Side Design end-->
+
+      <!--Sign in Form Start-->
+      <div class="forms">
+        <div class="form-content">
+          <div class="login-form">
+            <div class="title">
+              Login
+            </div>
+
+            <form action="" method="POST">
+              {% csrf_token %}
+              <div class="input-boxes">
+                <div class="input-box">
+                    <i class="fas fa-envelope" style="padding-left: 7px;"></i>
+                    <input type="text" placeholder="Enter username" name="Uname" required>
+                </div>
+
+                <div class="input-box">
+                    <i class="fas fa-lock" style="padding-left: 8px;"></i>
+                    <input type="password" placeholder="Enter your password" name="Pass" required>
+                </div>
+                  
+                <div class="text"><a href="#">
+                  Forgot password?</a>
+                </div>
+                  
+                <div class="button input-box">
+                 
+                    <input type="submit" value="Sumbit">
+                    <!-- <button type="submit">Sub</button> -->
+                  
+                </div>
+                  
+                <div class="text sign-up-text">
+                  <!-- Don't have an account? <label for="flip"> Signup now</label> -->
+                  Don't have an account? <label for="flip"> Signup now</label>
+                  <a href="signup"></a>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          
+        <!--SignIn Form Ends-->
+
+        
+      <!--SignUp Starts-->
+      <div class="signup-form">
+        <div class="title">
+          Signup
+        </div>
+
+        <form action="" method="POST">
+          {% csrf_token %}
+
+          <div class="input-boxes">
+            <div class="input-box">
+              <i class="fas fa-user" style="padding-left: 8px;"></i>
+              <input type="text" placeholder="Enter First Name" name="fname" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-user" style="padding-left: 8px;"></i>
+              <input type="text" placeholder="Enter Last Name" name="lname" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-envelope" style="padding-left: 8px;"></i>
+              <input type="email" placeholder="Enter your email" name="email" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-user" style="padding-left: 8px;"></i>
+              <input type="text" placeholder="Enter UserName" name="Uname" required>
+            </div>
+
+            <div class="input-box">
+              <i class="fas fa-lock" style="padding-left: 8px;"></i>
+              <input type="password" placeholder="Enter your password" name="Pass" required>
+            </div>
+
+            <div class="button input-box">
+              <input type="submit" value="Sumbit">
+            </div>
+
+            <div class="text sign-up-text">
+              Already have an account? <label for="flip">Login now</label>
+              <a href="login"></a>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!--Sign Up Ends-->
+        </div>
+      </div>
+    </div>
+
+    
+    <!--Container End-->
+
+
+  </body>
+  {% endblock content %}
+</html>

@@ -1,7 +1,12 @@
 from django import forms
 from .models import *
 
-class RegistrationForm(forms.ModelForm):
+class UserForm(forms.ModelForm):
     class Meta:
-        model = Register
-        fields = ('student_id', 'sName', 'plateNum','vType')
+        model = User
+        fields = '__all__'
+
+class RegistrationsForm(forms.ModelForm):
+    class Meta:
+        model = Registrations
+        fields = '__all__'
